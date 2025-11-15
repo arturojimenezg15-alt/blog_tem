@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .models import Publication
 from django.views.generic import ListView, DetailView
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView 
 # Create your views here.
 
 
@@ -17,4 +17,10 @@ class PublicationCreteView(CreateView):
 class PublicationDetailView(DetailView):
     model = Publication
     template_name = 'publication_detail.html'    
+    
+class PublicationUpdateView(UpdateView):
+    model = Publication
+    template_name = 'post_update.html'
+    fields = ['title', 'content']
+
     
