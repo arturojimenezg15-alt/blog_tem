@@ -14,6 +14,7 @@ class PublicationCreteView(CreateView):
     model = Publication
     template_name = 'create.html'
     fields = ['title', 'content', 'author']
+    success_url = reverse_lazy('publications-list')
 
 class PublicationDetailView(DetailView):
     model = Publication
